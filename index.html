@@ -1,209 +1,26 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Rizzify</title>
-  <link rel="shortcut icon" type="x-icon" href="logo.png">
-  <style>
-    /* Global Reset */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-/* Body */
-body {
-  font-family: 'Arial', sans-serif;
-  background-image: url(bgimg.jpg);
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: 100% 100%;
-  color: #fff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  margin: 0;
-}
-
-/* Container */
-.container {
-  text-align: center;
-  background-color: rgba(0, 0, 0, 0.2);
-  backdrop-filter: blur(5.5px);
-  padding: 80px 60px;
-  border-radius: 15px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-  max-width: 600px;
-  width: 90%;
-}
-
-
-.rizz-box {
-  background: linear-gradient(to right, transparent, #00bbff);
-  color: #fff;
-  padding: 90px;
-  font-size: 1.5em;
-  font-weight: bold;
-  border-radius: 10px;
-  margin-bottom: 30px;
-  height: 150px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: all 0.3s ease-in-out;
-}
-
-button {
-  background: linear-gradient(to right, #fff200, #ff9d00);
-  color: #fff;
-  border: none;
-  padding: 15px 30px;
-  border-radius: 30px;
-  font-size: 1.2em;
-  cursor: pointer;
-  transition: background-color 0.3s ease-in-out, transform 0.2s;
-}
-
-button:hover {
-  background-color: #555;
-  transform: translateY(-4px);
-}
-
-button:active {
-  transform: translateY(2px);
-}
-
-/* Responsive */
-@media screen and (max-width: 600px) {
-  .container {
-    width: 80%;
-  }
-
-  h1 {
-    font-size: 2.2em;
-  }
-
-  .rizz-box {
-    font-size: 1.2em;
-    padding: 30px;
-  }
-}
-
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download1500 word WW2 Essay</title>
 </head>
 <body>
-  <div class="container">
-    <img src="logo.png" alt="Rizzify" style="width: 100%; height: 100%; border-radius: 15px; width: 300px; margin-bottom: 30px;">
-    <div id="rizzDisplay" class="rizz-box">Click the button to generate some rizz and up your game!</div>
-    <button id="generateRizzBtn" class="btn">Generate Rizz</button>
-    <br>
-    <p style="font-size: 17px; color: #fff; margin-top: 30px;">Want Tips on having good rizz? <a href="https://rizzify-official.github.io/Rizz-tips/" target="_blank" style="font-size: 17px; color: #fff;">Click here for alot more</a></p>
-  </div>
-  <script>
-    // Array of Rizz lines
-const rizzLines = [
-  "Can I be your snowflake? I promise to never melt away from your heart.",
-  "Are you French? Because Eiffel for you.",
-  "Are you a Wi-Fi signal? Because I'm feeling a strong connection.",
-  "No pen, no paper...but, you still draw my attention.",
-  "Are you a heart? Because I'd never stop beating for you.",
-  "I believe in following my dreams, so you lead the way.",
-  "If being beautiful was a crime, you'd be on the most wanted list.",
-  "Kissing is a love language. Want to start a conversation with me?",
-  "Are you iron? Because I don't get enough of you",
-  "Should we get coffee? Cause I like you a latte.",
-  "You should be Jasmine without the Jas",
-  "Are you a Disney ride? Because I'd wait forever for you.",
-  "Are you water? Because I'd die without you.",
-  "I see you like tequila. Does that mean you'll give me a shot?",
-  "Hey, I'm sorry to bother you, but my phone must be broken because it doesn't seem to have your number in it.",
-  "Are you a boxer? Because you're a total knockout.",
-  "Are you public speaking? Because you make me really nervous.",
-  "Are you good at math? Me neither; the only number I care about is yours.",
-  "I'm not religious, but you're the answer to all of my prayers.",
-  "Is your name Elsa? Because I can't let you go.",
-  "Do you know the difference between history and you? History is the past, and you are my future.",
-  "Can I follow you home? My heart seems to have taken a detour since I met you.",
-  "Are you April 1st? Because I'm a fool for you.",
-  "Are you the Krabby Patty formula? Because I'm trying to steal you.",
-  "Is your name Chamomile? Because you're a hot-tea!",
-  "Are you Legos? Because I'd never lego of you.",
-  "Do you work for NASA? Because your beauty is out of this world.",
-  "Math is so confusing. It's always talking about x and y and never you and I.",  
-  "You look a lot like my next girlfriend/boyfriend/partner.",
-  "Are you from Tennessee? Because you're the only ten I see.",
-  "Are you Christmas morning? Because I've been waiting all year for you to arrive.",
-  "Are you Nemo? Because I've been trying to find you.",
-  "Are you a bank loan? Because you have my interest.",
-  "I hope you know CPR because you just took my breath away.",
-  "Are you the Sun? Because I could stare at you all day, and it'd be worth the risk.",
-  "Are you a beaver? Because DAM!",
-  "Are you a keyboard? Because you're just my type.",
-  "My mom said sharing is caring but, no...you're all mine!",
-  "Are you John Cena? Because I've never Cena girl like you before.",
-  "It's time to pay up. It's the first of the month, and you've been living in my mind rent-free.",
-  "Are you a light? Because you always make me feel bright.",
-  "Just so you know, I'm a felon...because I felon love with you.",
-  "Do you like Star Wars? Cause Yoda only one for me.",
-  "Are you chicken fingers and fries? Because I don't care how many options I have, will always choose you.",
-  "It's a good thing I have a library card because I've been checking you out.",
-  "Do you have a bandaid? My knees hurt from falling for you.",
-  "We may not be pants, but we'd make a great pair.",
-  "You know what's beautiful? Repeat the first word.",
-  "Your eyes remind me of IKEA: easy to get lost in.",
-  "Can I borrow a kiss? I promise to give one back.",
-  "If you were a Transformer, you'd be Optimus Fine.",
-  "Are you the Sun? Because you're hot.",
-  "Are you a vape? Because I'd never use you.",
-  "Can I get your jersey? Because I want your name and number.",
-  "I must be a time traveler because I can't imagine my future without you.",
-  "Do you believe in love at first sight, or should I walk by again?",
-  "Are you a light switch? Because you turn me on.",
-  "Are you a doctor? Because you instantly make me feel better.",
-  "You must be a masterpiece because I can't take my eyes off of you.",
-  "Are you made of cheese? Because you're looking Gouda!",
-  "Are you my favorite song? Because I can't get you out of my head.",
-  "I'm no photographer, but I can picture us together.",
-  "Are you a diamond? Because you shine so bright!",
-  "Do you like fishing? Because you have me hooked.",
-  "Are you a dream? Because I don't want to wake up.",
-  "If you were a fruit, you'd be a fine-apple.",
-  "If I could rearrange the alphabet, I'd put U and I together.",
-  "Kiss me if I'm wrong, but the Earth is definitely flat.",
-  "Are you a phone charger? Because I'm dying without you.",
-  "Are you a triangle? Because you're acute one.",
-  "What's your name again? Can I call you mine?",
-  "Are you a parking ticket? Because you've got fine written all over you.",
-  "I'm Microsoft. Can I crash at your place tonight?",
-  "Have you ever been to jail? Because it should be illegal to be that good-looking.",
-  "Did we go to school together? I could have sworn we had chemistry.",
-  "Are you a magician? Because every time I look at you, everyone else disappears.",
-  "Is your name Google? Because you have everything I've been searching for.",
-  "If you were a vegetable, you'd be a cute-cumber.",
-  "Are you made of copper and tellurium? Because you're Cu-Te.",
-  "Are you a camera? Because every time I look at you, I smile.",
-  "Are you an alien? Because you just abducted my heart.",
-  "Do you like raisins? How do you feel about a date?",
-  "Is your name Waldo? Because someone like you is hard to find.",
-  "Is your name Ariel? Because we mermaid for each other.",
-  "If looks could kill, you'd be a weapon of mass destruction."
-];
+        <h1>Download WW2 Essay</h1>
+        <p>Click the button below to download a 1500 word essay on WW2:</p>
+        <button class="download-button" id="downloadBtn">Download WW2 essay</button>
 
-// Function to generate random rizz
-function generateRizz() {
-  const randomIndex = Math.floor(Math.random() * rizzLines.length);
-  const rizz = rizzLines[randomIndex];
-  document.getElementById('rizzDisplay').textContent = rizz;
-}
-
-// Event listener for the button
-document.getElementById('generateRizzBtn').addEventListener('click', generateRizz);
-
-  </script>
+    <script>
+        document.getElementById('downloadBtn').addEventListener('click', function() {
+            const fileName = 'WW2Essay.txt';
+            const fileContent = 'World War II was one of the most devastating and far-reaching conflicts in human history, lasting from 1939 to 1945 and involving most of the worlds nations. It was a war that spanned across Europe, Asia, Africa, and the Pacific, causing an unprecedented level of destruction, suffering, and transformation. The war began on September 1, 1939, when Nazi Germany, led by Adolf Hitler, invaded Poland. This invasion triggered Britain and France to declare war on Germany, initiating the start of the global conflict. However, the seeds of World War II were sown long before that day. The Treaty of Versailles, which ended World War I, had imposed harsh penalties and territorial losses on Germany. Many Germans felt humiliated and economically strangled by the treaty, and this discontent allowed Hitler and the Nazi Party to rise to power by promising to restore German pride, rebuild the economy, and defy the treaty. Hitler, driven by expansionist and racist ideologies, sought to unite all German-speaking peoples and conquer Eastern Europe to gain what he called Lebensraum or living space. He had already annexed Austria and the Sudetenland region of Czechoslovakia before the full-scale war began. As Germany invaded Poland, the Soviet Union also invaded from the east due to a secret pact with Germany known as the Molotov-Ribbentrop Pact. The war quickly spread. Germany unleashed a new form of warfare known as blitzkrieg, or lightning war, using fast-moving tanks, aircraft, and infantry to quickly overwhelm enemy forces. Denmark, Norway, Belgium, the Netherlands, and France soon fell to German forces. By mid-1940, only Britain remained as a significant power resisting the Nazis in Western Europe. The Battle of Britain, fought in the skies, marked a turning point as the Royal Air Force successfully defended the United Kingdom from German aerial attacks. Meanwhile, in the East, Japan, a member of the Axis Powers alongside Germany and Italy, was aggressively expanding its empire across Asia and the Pacific. Japan invaded China in 1937, committing horrific atrocities such as the Nanjing Massacre. Tensions with Western powers escalated, and on December 7, 1941, Japan launched a surprise attack on the American naval base at Pearl Harbor, Hawaii. This event led the United States to officially enter the war. The entry of the United States marked a significant shift in the balance of power. The Allies, which now included the US, Britain, the Soviet Union, China, and many others, coordinated massive military and economic efforts to fight the Axis Powers. The war became truly global, with battles raging in North Africa, the Pacific Islands, Eastern Europe, and the Atlantic Ocean. In 1942 and 1943, the tide began to turn in favor of the Allies. The Soviet Union, after suffering tremendous losses, repelled the German invasion at the Battle of Stalingrad, which became one of the deadliest battles in history. In North Africa, Allied forces defeated German and Italian troops, allowing them to invade Italy and eventually topple Mussolinis Fascist regime. In the Pacific, American forces began a strategy of island hopping, capturing key islands and moving closer to Japan. By 1944, the Allies were ready to invade Nazi-occupied France. On June 6, 1944, known as D-Day, Allied troops stormed the beaches of Normandy in the largest amphibious invasion ever attempted. The success of this operation opened a western front against Germany. As Allied forces advanced from the west and the Soviets pushed from the east, Germany was squeezed from both sides. In April 1945, Soviet troops entered Berlin. Hitler committed suicide, and Germany surrendered unconditionally on May 7, 1945. Meanwhile, in the Pacific, the fight against Japan continued. Fierce battles took place on islands such as Iwo Jima and Okinawa, with heavy casualties on both sides. To avoid a costly land invasion of Japan, the United States dropped atomic bombs on the cities of Hiroshima and Nagasaki in August 1945. These bombings killed hundreds of thousands and caused unimaginable devastation. Japan surrendered shortly after, on August 15, 1945, marking the end of World War II. The war had immense consequences. An estimated 70 to 85 million people died, including soldiers and civilians. The Holocaust, the systematic genocide of six million Jews by the Nazis, revealed the depths of human cruelty and led to widespread horror and international condemnation. Cities were destroyed, economies ruined, and millions of people displaced. World War II led to the formation of the United Nations, an international body created to prevent future global conflicts. The United States and the Soviet Union emerged as superpowers, setting the stage for the Cold War. Europe was divided, with Eastern Europe under Soviet influence and Western Europe rebuilding with help from the US through the Marshall Plan. Decolonization movements gained momentum, as former colonies in Asia and Africa sought independence after seeing European powers weakened. World War II also spurred technological advances, from radar to jet engines to nuclear weapons. It redefined warfare, diplomacy, and global cooperation. The war showed both the darkest and most heroic aspects of humanity, and its legacy continues to shape our world. The lessons learned from the conflict underscore the importance of diplomacy, tolerance, and the need to stand against tyranny and hatred in all forms. World War II remains a powerful reminder of the cost of aggression and the resilience of those who fight for freedom and justice.';
+            const blob = new Blob([fileContent], { type: 'text/plain' });
+            const link = document.createElement('a');
+            link.href = URL.createObjectURL(blob);
+            link.download = fileName;
+            link.click();
+            URL.revokeObjectURL(link.href);
+        });
+    </script>
 </body>
 </html>
